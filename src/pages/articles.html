@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/8fb78c4ea1.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../Css/adminpage.css" />
+    <link rel="stylesheet" href="../Css/articles.css" />
+    <title>Admin | Create Article</title>
+  </head>
+  <body>
+    <header class="navigation">
+      <ul>
+        <li>
+          <a href="admin.html">
+            <!-- <span class="icon"><i class="fas fa-user"></i></span> -->
+            <span class="icon"
+              ><i><img class="icon-img" src="../images/me.jpg" alt="" /></i
+            ></span>
+            <span class="title"><h2>Ben Africa.</h2></span>
+          </a>
+        </li>
+        <li>
+          <a href="./admin.html">
+          <span class="icon"><i class="far fa-newspaper"></i></span>
+          <span class="title">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="./articles.html">
+            <span class="icon"><i class="far fa-newspaper"></i></span>
+            <span class="title">Articles</span>
+          </a>
+        </li>
+        <li>
+          <a href="./queries.html">
+            <span class="icon"><i class="fas fa-comment"></i></span>
+            <span class="title">Queries</span>
+          </a>
+        </li>
+        <li>
+          <a onclick="logout()">
+            <span class="icon"><i class="fas fa-sign-out-alt"></i> </span>
+            <span class="title">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </header>
+    <main class="main">
+      <header class="topbar">
+        <div class="toggle" onclick="toggleMenu();"></div>
+        <div class="user">
+          <img class="user" src="../images/me.jpg" />
+        </div>
+      </header>
+      <div class="article-container">
+        <form action="" method="POST" class="create__form" id="articleForm">
+          <div class="createArticleForm">
+            <div class="article__content">
+              <input
+                type="text"
+                name="newArticleTitle"
+                id="articleTitle"
+                class="article__title-input"
+                placeholder="Article Title"
+              />
+            </div>
+
+            <div class="article__content">
+              <textarea
+                name="newArticleContent"
+                id="articleContent"
+                class="article__content-input"
+                placeholder="Article Content"
+                cols="1"
+                rows="1"
+              ></textarea>
+            </div>
+
+            <p class="article-action-btns">
+              <a href="" class="article-action-btn" id="createArticleBut"
+                >Create Article</a
+              >
+            </p>
+          </div>
+        </form>
+      </div>
+    </main>
+    <script src="../JS/AdminBlog.js"></script>
+    <script>
+      function toggleMenu() {
+        let toggle = document.querySelector(".toggle");
+        let navigation = document.querySelector(".navigation");
+        let main = document.querySelector(".main");
+        main.classList.toggle("active");
+        toggle.classList.toggle("active");
+        navigation.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>

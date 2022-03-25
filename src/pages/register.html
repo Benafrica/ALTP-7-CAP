@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+    <title>Register</title>
+</head>
+<body>
+    <header class="header">
+        <div class="nav">
+            <div class="header-title-logo"><a href="index.html">itsMCY</a></div>
+            <div class="openMenu"><i class="fa fa-bars"></i></div>
+            <ul class="mainMenu">
+                <li><a href="../../index.html">HOME</a></li>
+                <li><a href="blog.html">BLOG</a></li>
+                <li><a href="hire_me.html">HIRE ME</a></li>
+                <li><a href="about.html">ABOUT ME</a></li>
+                <li><a href="contact.html">CONTACT ME</a></li>
+                <li><a href="login.html" id="home-link-active">LOGIN</a></li>
+            <div class="closeMenu"><i class="fa fa-times"></i></div>
+            </ul>
+        </div>
+        <div class="left-side">
+            <li><a href="../../index.html" >home</a></li>
+            <li><a href="blog.html">blog</a></li>
+            <li><a href="hire_me.html">hire me</a></li>
+        </div>
+        <div class="right-side">
+            <li><a href="about.html">about me</a></li>
+            <li><a href="contact.html">contact me</a></li>
+            <li><a href="login.html" id="home-link-active">login</a></li>
+        </div>
+    </header>
+    <main class="login-content">
+            <div>
+                <h1 class="login-head">Register</h1>
+            </div>
+            <div class="log-line"></div>
+        </div>
+        <div class="form-log-content">
+            <form id="form" class="form" ">  
+                <div class="form-control">
+                    <input type="text" placeholder="First Name" id="fname" />
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+                <div class="form-control">
+                    <input type="text" placeholder="Last Name" id="lname" />
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+                <div class="form-control">
+                    <input type="email" placeholder="example@example.com" id="email" />
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>
+                <div class="form-control">
+                    <input type="password" placeholder="Password" id="password"/>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small>
+                </div>                
+                <button id="log-but">Register</button>
+            </form>
+        </div>
+        <div class="log-bot">
+             <li>
+                 <a href="login.html">Already Have An Account?</a>                 
+             </li>
+             <li>
+                 <a href="#">NEED HELP</a>
+             </li>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="top-foot">
+            <p>are you ready to work with me?</p>
+            <h3>say hello!</h3>
+            <div class="sub-foot">
+                <a href="mailto:benafrica.009@gmail.com">benafrica.009@gmail.com</a>
+                <a href="tel:+250780341418">+(250) 780 341 418</a>
+            </div>
+        </div>
+        <div class="bottom-foot">
+            <div class="foot-left">
+                <li><a href="../../index.html">HOME</a></li>
+                <li><a href="hire_me.html">Hire Me</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="contact.html">Contact Me</a></li>
+            </div>
+            <div class="foot-right icons">
+                <li class="foot-icon">
+                    <img src="https://img.icons8.com/ios/100/000000/twitter--v1.png"/>
+                </li>
+                <li class="foot-icon">
+                    <img src="https://img.icons8.com/ios/100/000000/instagram-new.png"/>
+                </li>
+                <li class="foot-icon">
+                    <img src="https://img.icons8.com/windows/100/000000/behance.png"/>
+                </li>
+                <li class="foot-icon">
+                    <img src="https://img.icons8.com/material-outlined/96/000000/linkedin--v2.png"/>
+                </li>
+                <li class="foot-icon">
+                    <img src="https://img.icons8.com/ios-glyphs/100/000000/github.png"/>
+                </li>
+                <li class="foot-icon">
+                    <img src="https://img.icons8.com/ios/100/000000/figma--v2.png"/>
+                </li>
+            </div>
+        </div>
+    </footer>
+    <script src="../JS/app.js"></script>
+    <script src="../JS/AuthRegister.js"></script>
+    <script>
+        // Login Page Form Validation
+const form = document.getElementById('form');
+const fName = document.getElementById('fname');
+const lName = document.getElementById('lname');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+
+form.addEventListener('submit', e => {
+    e.preventDefault();	
+	checkInputs();
+});
+
+function checkInputs() {
+	// trim to remove the whitespaces
+	const fNameValue = fName.value.trim();
+	const lNameValue = lName.value.trim();
+	const emailValue = email.value.trim();
+	const passwordValue = password.value.trim();
+	
+	if(fNameValue === '') {
+		setErrorFor(fName, 'First Name Cannot Be Blank');
+	} else {
+		setSuccessFor(fName);
+	}
+    
+    if(lNameValue === '') {
+		setErrorFor(lName, 'Last Name Cannot Be Blank');
+	} else {
+		setSuccessFor(lName);
+	}
+    
+    if(emailValue === '') {
+		setErrorFor(email, 'Email Cannot Be Blank');
+	} else if (!isEmail(email.value)) {
+		setErrorFor(email, 'Please Provide A Valid Email');
+	} else {
+		setSuccessFor(email);
+	}
+	
+	if(passwordValue === '') {
+		setErrorFor(password, 'Password cannot be blank');
+	} else {
+		setSuccessFor(password);
+        postNewUser();
+	}
+}
+
+function setErrorFor(input, message) {
+	const formControl = input.parentElement;
+	const small = formControl.querySelector('small');
+	formControl.className = 'form-control error';
+	small.innerText = message;
+}
+
+function setSuccessFor(input) {
+	const formControl = input.parentElement;
+	formControl.className = 'form-control success';
+}
+
+function isEmail(emailVal) {
+	const emailPattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	return emailPattern.test(emailVal);
+}
+    </script>
+</body>
+</html>
